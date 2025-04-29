@@ -1,0 +1,273 @@
+<html>
+
+<head>
+    <title>Assignment 2 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="home.js" defer></script>
+
+    <style>
+    body { 
+    background-color: #92DCE5;
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+    }
+
+
+    #main-nav{ background-color: red;
+            color:white;
+            text-align: center;          
+            
+    }
+
+    #main-nav li:hover 
+  { background-color: coral;
+   color:white;
+   
+   
+  }
+  #main-nav ul li {
+   list-style: none;
+   display: inline-block;
+   text-align: center;
+   padding: 10px;
+   
+
+  }  
+
+  .container {
+    text-align: center;
+  }
+
+  .container .button {
+  margin: 20px;
+}
+
+.button
+,
+.button:after {
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button,
+  .button:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}  
+
+.quote-container {
+      width: 35%;
+      margin:30px auto;
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+
+#audio-instructions {
+  background-color: #177145;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  margin: 30px auto;
+  width: 45%;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#audio-instructions h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#audio-instructions p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#audio-instructions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+#audio-instructions ul ul {
+  list-style-type: circle;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.button-group button {
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>INST-377-Activities</h1>
+      <nav id="main-nav">
+          <ul>
+            <li><a class="nav-link" href="home.html">Home</a></li>
+            <li><a class="nav-link" href="stocks.html">Stocks</a></li>
+            <li><a class="nav-link" href="dogs.html">Dogs</a></li>
+          </ul>
+      </nav>
+    <h1>There are some different acitivities we can try!</h1>
+    
+    <div class="container">
+        <button class="button" role="button" onclick="window.location.href='stocks.html'">Stocks</button>
+        <button class="button" role="button" onclick="window.location.href='dogs.html'">Dogs</button>
+    </div>
+
+    <div class="quote-container">
+        <h2>Quote of the Page Load</h2>
+        <div id="quoteBlock">
+        </div>
+      </div>
+
+  
+<div id="audio-instructions">
+    <h2>In this web page there are options to Navigate using Audio!</h2>
+    <p>Ensure your Mic is enabled to be able to use this feature</p>
+    <ul>
+      <li><strong>Navigate to a Different Page</strong>
+        <ul><li>Say: Navigate to &lt;page&gt;</li></ul>
+      </li>
+      <li><strong>Change the Page Color</strong>
+        <ul><li>Say: Change the color to &lt;color&gt;</li></ul>
+      </li>
+      <li><strong>Say Hello Back to you!</strong>
+        <ul><li>Say: Hello</li></ul>
+      </li>
+    </ul>
+    <div class="button-group">
+      <button onclick="turnOnAudio()">Turn On Listening</button>
+      <button onclick="turnOffAudio()">Turn Off Listening</button>
+    </div>
+  </div>
+    
+
+</body>
+
+
+</html>
