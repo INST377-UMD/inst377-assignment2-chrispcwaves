@@ -1,0 +1,232 @@
+<html>
+
+<head>
+    <title>Assignment 2 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="stocks.js" defer></script>
+
+
+    <style>
+    body { 
+    background-color: #92DCE5;
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+    }
+
+
+    #main-nav{ background-color:red;
+            color:white;
+            text-align: center;          
+            
+    }
+
+    #main-nav li:hover 
+  { background-color: coral;
+   color:white;
+   
+   
+  }
+  #main-nav ul li {
+   list-style: none;
+   display: inline-block;
+   text-align: center;
+   padding: 10px;
+   
+
+  }  
+
+  .container {
+    text-align: center;
+  }
+
+  .container .button {
+  margin: 20px;
+}
+
+
+.custom-button {
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.custom-button:hover {
+  background-color: #f0f0f0;}
+
+table {
+    border-collapse: collapse;
+    margin-left: 20px; 
+    width: auto;
+  }
+
+  th, td {
+    border: 2px solid #444;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    height: 120px;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #fdfdfd;
+  }
+  
+  td{
+    background-color: white;
+  }
+
+  a {
+    color: #000066;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: #000066;
+  }
+
+#audio-instructions {
+  background-color: #177145;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  margin: 30px auto;
+  width: 45%;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#audio-instructions h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#audio-instructions p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#audio-instructions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+#audio-instructions ul ul {
+  list-style-type: circle;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.button-group button {
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+      
+      <h1>INST-377-Activities</h1>
+      <nav id="main-nav">
+          <ul>
+            <li><a class="nav-link" href="home.html">Home</a></li>
+            <li><a class="nav-link" href="stocks.html">Stocks</a></li>
+            <li><a class="nav-link" href="dogs.html">Dogs</a></li>
+          </ul>
+      </nav>
+
+      <h1>Let's chart some stocks!</h1>
+      <form onsubmit="event.preventDefault(); lookupStock();">
+        <input type="text" id="stocks" name="stocks" required>
+        <br>
+      
+        <select id="days" name="days" required>
+          <option value="30">30 Days</option>
+          <option value="60">60 Days</option>
+          <option value="90">90 Days</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="custom-button">Lookup</button>
+      </form>
+
+      <canvas id="stockChart" width="600" height="300"></canvas>
+
+      <table id="stockTable">
+        <thead>
+          <tr>
+            <th>TICKER</th>
+            <th>COMMENT COUNT</th>
+            <th>SENTIMENT</th>
+          </tr>
+        </thead>
+        <tbody id="table-row">  
+        </tbody>
+      </table>
+      
+      
+      
+
+<div id="audio-instructions">
+    <h2>In this web page there are options to Navigate using Audio!</h2>
+    <p>Ensure your Mic is enabled to be able to use this feature</p>
+    <ul>
+      <li><strong>Lookup a stock</strong>
+        <ul><li>Say: Lookup &lt;Stock Ticker&gt;</li></ul>
+      <li><strong>Navigate to a Different Page</strong>
+        <ul><li>Say: Navigate to &lt;page&gt;</li></ul>
+      </li>
+      <li><strong>Change the Page Color</strong>
+        <ul><li>Say: Change the color to &lt;color&gt;</li></ul>
+      </li>
+      <li><strong>Say Hello Back to you!</strong>
+        <ul><li>Say: Hello</li></ul>
+      </li>
+    </ul>
+    <div class="button-group">
+      <button onclick="VoiceStocks()">Turn On Listening</button>
+      <button onclick="turnOffAudio()">Turn Off Listening</button>
+    </div>
+  </div>
+
+
+
+</body>
+
+
+</html>

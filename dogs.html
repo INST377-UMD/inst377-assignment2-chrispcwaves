@@ -1,0 +1,231 @@
+<html>
+
+<head>
+    <title>Assignment 2 </title>
+    <script src="https://cdn.jsdelivr.net/npm/simple-slider-js@1.0.1/dist/simpleslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js" defer></script>
+    <script src="dogs.js"></script>
+  
+    <style>
+    body { 
+    background-color: #92DCE5;
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+    }
+
+
+    #main-nav{ background-color: red;
+            color:white;
+            text-align: center;          
+            
+    }
+
+    #main-nav li:hover 
+  { background-color: coral;
+   color:white;
+   
+   
+  }
+  #main-nav ul li {
+   list-style: none;
+   display: inline-block;
+   text-align: center;
+   padding: 10px;
+   
+
+  }  
+
+  .container {
+    text-align: center;
+  }
+
+  .container .button {
+  margin: 20px;
+}
+
+#carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 700px;
+  height: 550px; 
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carousel img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+
+#breed-buttons {
+  margin: 30px auto;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.breed-button {
+  background-color:red;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.breed-button:hover {
+  background-color: #f39c12;
+}
+
+#breed-info {
+  display: none;
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+#breed-info h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+#breed-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+#audio-instructions {
+  background-color: #177145;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  margin: 30px auto;
+  width: 45%;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#audio-instructions h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#audio-instructions p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#audio-instructions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+#audio-instructions ul ul {
+  list-style-type: circle;
+  padding-left: 30px;
+  font-size: 14px;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.button-group button {
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>INST-377-Doggos</h1>
+      <nav id="main-nav">
+          <ul>
+            <li><a class="nav-link" href="home.html">Home</a></li>
+            <li><a class="nav-link" href="stocks.html">Stocks</a></li>
+            <li><a class="nav-link" href="dogs.html">Dogs</a></li>
+          </ul>
+      </nav>
+      <h1>Doggos! 🐶</h1>
+      <div id="carousel" class="slider"></div>
+      <div id="breed-buttons"></div>
+      <div id="breed-info"></div>
+
+    
+      
+   
+    
+
+  
+<div id="audio-instructions">
+    <h2>In this web page there are options to Navigate using Audio!</h2>
+    <p>Ensure your Mic is enabled to be able to use this feature</p>
+    <ul>
+      
+        <li><strong>Load Dog Breed</strong>
+            <ul><li>Say:Load Dog Breed &lt;Dog Breed Name&gt;</li></ul>
+        </li>
+      <li><strong>Navigate to a Different Page</strong>
+        <ul><li>Say: Navigate to &lt;page&gt;</li></ul>
+      </li>
+      <li><strong>Change the Page Color</strong>
+        <ul><li>Say: Change the color to &lt;color&gt;</li></ul>
+      </li>
+      <li><strong>Say Hello Back to you!</strong>
+        <ul><li>Say: Hello</li></ul>
+      </li>
+    </ul>
+    <div class="button-group">
+      <button onclick="turnOnAudio()">Turn On Listening</button>
+      <button onclick="turnOffAudio()">Turn Off Listening</button>
+    </div>
+
+</div>
+
+
+</body>
+
+
+</html>
